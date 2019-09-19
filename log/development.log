@@ -58740,3 +58740,659 @@ Processing by RequestsController#index as HTML
 Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/requests" for ::1 at 2019-09-19 10:28:18 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/auth/sign_in" for ::1 at 2019-09-19 10:28:35 +0200
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"benoit.rouquie@adotmob.com", "password"=>"[FILTERED]", "session"=>{"email"=>"benoit.rouquie@adotmob.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "benoit.rouquie@adotmob.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"51jVVJuF3ZT94_eo2pEVqg\":{\"token\":\"$2a$12$nePeUMzP0zk33ODoUwUBhuZmmHNiCrin1IbJoXQvuU3cTmDaPZns.\",\"expiry\":1569249251},\"qsGwuNKhoM4qBR-at-omOQ\":{\"token\":\"$2a$12$x9r7oT0d5h2H9T6Qr1k6h.lHQOP4MM7Ibjtd2t0HOsAdqyJkaBa0K\",\"expiry\":1569251195},\"ZRW0apJiCqNGae1F4pJnPQ\":{\"token\":\"$2a$12$1nfqFV/RrTo3ioAqE9U6fuSCGzQl4K/4.9/4V3cXnYStUwi0thZdi\",\"expiry\":1569417445},\"zNbNL-OnQOEejr9O_rIr_A\":{\"token\":\"$2a$12$8BAUtfw2qYO2dSPOOQ8mH.0WCvz2PQEFXEH25CklyG5LY.AblnoKO\",\"expiry\":1569509248},\"TEfwqFrtEM2XMWC42LvpNA\":{\"token\":\"$2a$12$Tku1lC9M1LD.ZU0XF0qdROTrfsG7Pg0fKp56ZxYHaQJpOfHXPk29q\",\"expiry\":1569574598},\"rV0eChkSF7YwaciwenZPbg\":{\"token\":\"$2a$12$V15UK2/2ZuSpz8i./mtjUegLRzdyxvJHXdQQzyH7D.Of2EqfCeHHe\",\"expiry\":1569577523},\"TSLZIpvxsJRc1S1f2waDuA\":{\"token\":\"$2a$12$yV/oYl8WoqYL/Gd.AXa8l.qDw1.wry5.RlL5bdvHWVsWpKcrlCRKy\",\"expiry\":1569589097},\"abjgQAKj_7ogaEyBSxOmmA\":{\"token\":\"$2a$12$Cy5NoErsbG.2JibBEDBdv.MgfXN6SsXWY.6cywKae1ViSs4AXciXe\",\"expiry\":1569589143},\"CJetgjmsrWNMAoTeX8dwZA\":{\"token\":\"$2a$12$E1B4W9cupH.GIGTR.0DPmeNPnYVm7730u3ymA20CeNTinJyhsGzpq\",\"expiry\":1570091315}}"], ["updated_at", "2019-09-19 08:28:35.813097"], ["id", 10]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-09-19 08:28:35.820444"], ["sign_in_count", 8], ["current_sign_in_at", "2019-09-19 08:28:35.819370"], ["last_sign_in_at", "2019-09-13 12:59:03.651456"], ["id", 10]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 333ms (Views: 0.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 10:28:35 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/auth/sign_in" for ::1 at 2019-09-19 10:29:38 +0200
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"benoit.rouquie@adotmob.com", "password"=>"[FILTERED]", "session"=>{"email"=>"benoit.rouquie@adotmob.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "benoit.rouquie@adotmob.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"51jVVJuF3ZT94_eo2pEVqg\":{\"token\":\"$2a$12$nePeUMzP0zk33ODoUwUBhuZmmHNiCrin1IbJoXQvuU3cTmDaPZns.\",\"expiry\":1569249251},\"qsGwuNKhoM4qBR-at-omOQ\":{\"token\":\"$2a$12$x9r7oT0d5h2H9T6Qr1k6h.lHQOP4MM7Ibjtd2t0HOsAdqyJkaBa0K\",\"expiry\":1569251195},\"ZRW0apJiCqNGae1F4pJnPQ\":{\"token\":\"$2a$12$1nfqFV/RrTo3ioAqE9U6fuSCGzQl4K/4.9/4V3cXnYStUwi0thZdi\",\"expiry\":1569417445},\"zNbNL-OnQOEejr9O_rIr_A\":{\"token\":\"$2a$12$8BAUtfw2qYO2dSPOOQ8mH.0WCvz2PQEFXEH25CklyG5LY.AblnoKO\",\"expiry\":1569509248},\"TEfwqFrtEM2XMWC42LvpNA\":{\"token\":\"$2a$12$Tku1lC9M1LD.ZU0XF0qdROTrfsG7Pg0fKp56ZxYHaQJpOfHXPk29q\",\"expiry\":1569574598},\"rV0eChkSF7YwaciwenZPbg\":{\"token\":\"$2a$12$V15UK2/2ZuSpz8i./mtjUegLRzdyxvJHXdQQzyH7D.Of2EqfCeHHe\",\"expiry\":1569577523},\"TSLZIpvxsJRc1S1f2waDuA\":{\"token\":\"$2a$12$yV/oYl8WoqYL/Gd.AXa8l.qDw1.wry5.RlL5bdvHWVsWpKcrlCRKy\",\"expiry\":1569589097},\"abjgQAKj_7ogaEyBSxOmmA\":{\"token\":\"$2a$12$Cy5NoErsbG.2JibBEDBdv.MgfXN6SsXWY.6cywKae1ViSs4AXciXe\",\"expiry\":1569589143},\"CJetgjmsrWNMAoTeX8dwZA\":{\"token\":\"$2a$12$E1B4W9cupH.GIGTR.0DPmeNPnYVm7730u3ymA20CeNTinJyhsGzpq\",\"expiry\":1570091315},\"tqDFomXrKHAEr58i7PeJ1Q\":{\"token\":\"$2a$12$R5GuY5cxmOcbmOoMQQInLOUiwfuRR5amrvJkUChBFs9FoveemyRQW\",\"expiry\":1570091378}}"], ["updated_at", "2019-09-19 08:29:38.299114"], ["id", 10]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-09-19 08:29:38.303494"], ["sign_in_count", 9], ["current_sign_in_at", "2019-09-19 08:29:38.302396"], ["last_sign_in_at", "2019-09-19 08:28:35.819370"], ["id", 10]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 305ms (Views: 0.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 10:29:38 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 10:54:26 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 10:54:59 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 10:57:48 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 10:58:25 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 10:58:54 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 10:59:11 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:01:58 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:03:13 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:03:14 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:04:06 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:06:02 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:06:34 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:07:05 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:10:07 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:23:19 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:23:26 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:23:52 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:24:16 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:25:15 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:25:25 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:25:53 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:26:17 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:26:41 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:29:02 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:29:30 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:29:48 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:29:52 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:30:14 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:31:28 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:31:30 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:34:15 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:34:47 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.5ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:34:49 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/auth/sign_in" for ::1 at 2019-09-19 11:35:06 +0200
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"benoit.rouquie@adotmob.com", "password"=>"[FILTERED]", "session"=>{"email"=>"benoit.rouquie@adotmob.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "benoit.rouquie@adotmob.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"qsGwuNKhoM4qBR-at-omOQ\":{\"token\":\"$2a$12$x9r7oT0d5h2H9T6Qr1k6h.lHQOP4MM7Ibjtd2t0HOsAdqyJkaBa0K\",\"expiry\":1569251195},\"ZRW0apJiCqNGae1F4pJnPQ\":{\"token\":\"$2a$12$1nfqFV/RrTo3ioAqE9U6fuSCGzQl4K/4.9/4V3cXnYStUwi0thZdi\",\"expiry\":1569417445},\"zNbNL-OnQOEejr9O_rIr_A\":{\"token\":\"$2a$12$8BAUtfw2qYO2dSPOOQ8mH.0WCvz2PQEFXEH25CklyG5LY.AblnoKO\",\"expiry\":1569509248},\"TEfwqFrtEM2XMWC42LvpNA\":{\"token\":\"$2a$12$Tku1lC9M1LD.ZU0XF0qdROTrfsG7Pg0fKp56ZxYHaQJpOfHXPk29q\",\"expiry\":1569574598},\"rV0eChkSF7YwaciwenZPbg\":{\"token\":\"$2a$12$V15UK2/2ZuSpz8i./mtjUegLRzdyxvJHXdQQzyH7D.Of2EqfCeHHe\",\"expiry\":1569577523},\"TSLZIpvxsJRc1S1f2waDuA\":{\"token\":\"$2a$12$yV/oYl8WoqYL/Gd.AXa8l.qDw1.wry5.RlL5bdvHWVsWpKcrlCRKy\",\"expiry\":1569589097},\"abjgQAKj_7ogaEyBSxOmmA\":{\"token\":\"$2a$12$Cy5NoErsbG.2JibBEDBdv.MgfXN6SsXWY.6cywKae1ViSs4AXciXe\",\"expiry\":1569589143},\"CJetgjmsrWNMAoTeX8dwZA\":{\"token\":\"$2a$12$E1B4W9cupH.GIGTR.0DPmeNPnYVm7730u3ymA20CeNTinJyhsGzpq\",\"expiry\":1570091315},\"tqDFomXrKHAEr58i7PeJ1Q\":{\"token\":\"$2a$12$R5GuY5cxmOcbmOoMQQInLOUiwfuRR5amrvJkUChBFs9FoveemyRQW\",\"expiry\":1570091378},\"Fv-oFTwfP-uo4SxIeBZ4RQ\":{\"token\":\"$2a$12$Y3QF0Rq7q0kBEyYBENbQ0OP2Y8iEEh8Z9iqpagjpx22.pxpScsw.2\",\"expiry\":1570095306}}"], ["updated_at", "2019-09-19 09:35:06.355606"], ["id", 10]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-09-19 09:35:06.360370"], ["sign_in_count", 10], ["current_sign_in_at", "2019-09-19 09:35:06.359253"], ["last_sign_in_at", "2019-09-19 08:29:38.302396"], ["id", 10]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 308ms (Views: 0.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:35:31 +0200
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 11:35:31 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  Parameters: {"user_id"=>"10"}
+  ↳ app/controllers/requests_controller.rb:11
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.1ms)
+
+
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/auth/sign_in" for ::1 at 2019-09-19 11:53:46 +0200
+Processing by DeviseTokenAuth::SessionsController#create as HTML
+  Parameters: {"email"=>"benoit.rouquie@adotmob.com", "password"=>"[FILTERED]", "session"=>{"email"=>"benoit.rouquie@adotmob.com", "password"=>"[FILTERED]"}}
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? AND "users"."provider" = ? LIMIT ?[0m  [["email", "benoit.rouquie@adotmob.com"], ["provider", "email"], ["LIMIT", 1]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Unpermitted parameter: :session
+Unpermitted parameter: :session
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "tokens" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["tokens", "{\"ZRW0apJiCqNGae1F4pJnPQ\":{\"token\":\"$2a$12$1nfqFV/RrTo3ioAqE9U6fuSCGzQl4K/4.9/4V3cXnYStUwi0thZdi\",\"expiry\":1569417445},\"zNbNL-OnQOEejr9O_rIr_A\":{\"token\":\"$2a$12$8BAUtfw2qYO2dSPOOQ8mH.0WCvz2PQEFXEH25CklyG5LY.AblnoKO\",\"expiry\":1569509248},\"TEfwqFrtEM2XMWC42LvpNA\":{\"token\":\"$2a$12$Tku1lC9M1LD.ZU0XF0qdROTrfsG7Pg0fKp56ZxYHaQJpOfHXPk29q\",\"expiry\":1569574598},\"rV0eChkSF7YwaciwenZPbg\":{\"token\":\"$2a$12$V15UK2/2ZuSpz8i./mtjUegLRzdyxvJHXdQQzyH7D.Of2EqfCeHHe\",\"expiry\":1569577523},\"TSLZIpvxsJRc1S1f2waDuA\":{\"token\":\"$2a$12$yV/oYl8WoqYL/Gd.AXa8l.qDw1.wry5.RlL5bdvHWVsWpKcrlCRKy\",\"expiry\":1569589097},\"abjgQAKj_7ogaEyBSxOmmA\":{\"token\":\"$2a$12$Cy5NoErsbG.2JibBEDBdv.MgfXN6SsXWY.6cywKae1ViSs4AXciXe\",\"expiry\":1569589143},\"CJetgjmsrWNMAoTeX8dwZA\":{\"token\":\"$2a$12$E1B4W9cupH.GIGTR.0DPmeNPnYVm7730u3ymA20CeNTinJyhsGzpq\",\"expiry\":1570091315},\"tqDFomXrKHAEr58i7PeJ1Q\":{\"token\":\"$2a$12$R5GuY5cxmOcbmOoMQQInLOUiwfuRR5amrvJkUChBFs9FoveemyRQW\",\"expiry\":1570091378},\"Fv-oFTwfP-uo4SxIeBZ4RQ\":{\"token\":\"$2a$12$Y3QF0Rq7q0kBEyYBENbQ0OP2Y8iEEh8Z9iqpagjpx22.pxpScsw.2\",\"expiry\":1570095306},\"fmMmlnwd--oHiMKQLDjBCg\":{\"token\":\"$2a$12$n.kTtgw5h3zMeahE09Yg8.B8QaVXTGUDtLWMA/NcJk2sTUgurUdTC\",\"expiry\":1570096426}}"], ["updated_at", "2019-09-19 09:53:46.800000"], ["id", 10]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-09-19 09:53:46.803528"], ["sign_in_count", 11], ["current_sign_in_at", "2019-09-19 09:53:46.802779"], ["last_sign_in_at", "2019-09-19 09:35:06.359253"], ["id", 10]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 305ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 11:53:46 +0200
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.4ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 11:54:20 +0200
+Started GET "/requests" for ::1 at 2019-09-19 11:54:20 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 11:54:22 +0200
+Processing by RequestsController#index as HTML
+Started GET "/requests" for ::1 at 2019-09-19 11:54:22 +0200
+  Parameters: {"user_id"=>"10"}
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 11:55:20 +0200
+Started GET "/requests" for ::1 at 2019-09-19 11:55:20 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 11:55:23 +0200
+Started GET "/requests" for ::1 at 2019-09-19 11:55:23 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms)
+
+
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 11:57:19 +0200
+Started GET "/requests" for ::1 at 2019-09-19 11:57:19 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms)
+
+
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 12:02:05 +0200
+Started GET "/requests" for ::1 at 2019-09-19 12:02:05 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 14:18:39 +0200
+Started GET "/requests" for ::1 at 2019-09-19 14:18:39 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 14:18:41 +0200
+Processing by RequestsController#index as HTML
+Started GET "/requests" for ::1 at 2019-09-19 14:18:41 +0200
+  Parameters: {"user_id"=>"10"}
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 14:18:42 +0200
+Started GET "/requests" for ::1 at 2019-09-19 14:18:42 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 14:18:56 +0200
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+Started GET "/requests" for ::1 at 2019-09-19 14:18:56 +0200
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+Processing by RequestsController#index as HTML
+  ↳ app/controllers/requests_controller.rb:11
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 14:19:39 +0200
+Started GET "/requests" for ::1 at 2019-09-19 14:19:39 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.1ms)
+
+
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 14:19:41 +0200
+Processing by RequestsController#index as HTML
+Started GET "/requests" for ::1 at 2019-09-19 14:19:41 +0200
+  Parameters: {"user_id"=>"10"}
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+
+
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests" for ::1 at 2019-09-19 14:21:26 +0200
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 14:21:26 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  Parameters: {"user_id"=>"10"}
+  ↳ app/controllers/requests_controller.rb:11
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+
+
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 14:24:39 +0200
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+Started GET "/requests" for ::1 at 2019-09-19 14:24:39 +0200
+  [1m[36mRequest Load (0.1ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+Processing by RequestsController#index as HTML
+  ↳ app/controllers/requests_controller.rb:11
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+
+
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT  "requests".* FROM "requests" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 15:08:23 +0200
+Started GET "/requests" for ::1 at 2019-09-19 15:08:23 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RequestsController#index as HTML
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 41ms (Views: 27.3ms | ActiveRecord: 2.5ms)
+
+
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.3ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-09-19 15:51:09 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.3ms)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-19 15:52:03 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-19 15:52:25 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-09-19 15:53:05 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/adotmob/.rvm/gems/ruby-2.3.1/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/requests?user_id=10" for ::1 at 2019-09-19 16:03:21 +0200
+Started GET "/requests" for ::1 at 2019-09-19 16:03:21 +0200
+Processing by RequestsController#index as HTML
+Processing by RequestsController#index as HTML
+  Parameters: {"user_id"=>"10"}
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests"[0m
+  [1m[36mRequest Load (0.2ms)[0m  [1m[34mSELECT "requests".* FROM "requests" WHERE "requests"."user_id" = ?[0m  [["user_id", 10]]
+  ↳ app/controllers/requests_controller.rb:11
+  ↳ app/controllers/requests_controller.rb:11
+Completed 200 OK in 26ms (Views: 18.8ms | ActiveRecord: 0.6ms)
+
+
+Completed 200 OK in 27ms (Views: 18.9ms | ActiveRecord: 0.5ms)
+
+
