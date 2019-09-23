@@ -8,13 +8,13 @@ default: &default
   adapter: postgresql
   # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   # timeout: 5000
-  database: volunteers_development
-  username: <YOUR_POSTGRESQL_USER_NAME>
+  database: adotmob
+  username: adotmob
 
 development:
   <<: *default
   # database: db/development.sqlite3
-  database: volunteers
+  database: adotmob
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,10 +22,10 @@ development:
 test:
   <<: *default
   # database: db/test.sqlite3
-  database: volunteers
+  database: adotmob
 
 production:
   <<: *default
   adapter: postgresql
   # database: db/production.sqlite3
-  database: volunteers_production
+  database: adotmob
