@@ -24,6 +24,6 @@ class RequestsController < ApplicationController
     
     private
         def request_params
-            params.permit(:id, :title, :description, :address, :lat, :lng, :user_id, :category)
+            params.permit(:id, :title, :description, :address, :lat, :lng, :user_id, :category, :user_name)
         end
 end
