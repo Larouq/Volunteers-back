@@ -21,9 +21,16 @@ class RequestsController < ApplicationController
         @requests.destroy
         render json: @requests
     end
+
+    def update
+        @request = Request.find(params[:id])
+        @request.update_attributes(request_params)
+
+        render json: @request
+    end
     
     private
         def request_params
-            params.permit(:id, :title, :description, :address, :lat, :lng, :user_id, :category, :user_name)
+            params.permit(:id, :title, :description, :address, :lat, :lng, :user_id, :category, :user_name, :statement)
         end
 end
