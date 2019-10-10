@@ -17,7 +17,7 @@ class MessagesController < ApplicationController
         @request = Request.find_by_id(params[:request_id])
         @messages = Message.where(request_id: params[:request_id])
         if @messages.distinct.count(:user_id) == 5
-            @request.update_column(:status, 0)
+            @request.update_column(:status, 1)
         end
         render json: @message
     end
