@@ -16,12 +16,6 @@ class RequestsController < ApplicationController
         render json: @request
     end
 
-    def destroy
-        @requests = Request.find(params[:id])
-        @requests.destroy
-        render json: @requests
-    end
-
     def update
         @request = Request.find(params[:id])
         @request.update_attributes(request_params)
