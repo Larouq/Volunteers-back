@@ -8,7 +8,15 @@ class MessagesController < ApplicationController
             @messages = Message.all
         end
 
-        render json: @messages
+        render json: @messages.map { |i| {
+                :id => i.id, 
+                :content => i.content, 
+                :request_id => i.request_id, 
+                :name => User.find(i.user_id).nickname,
+                :created_at => i.created_at,
+                :user_id => i.user_id
+            }
+        }
     end
 
     def create
