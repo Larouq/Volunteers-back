@@ -5,5 +5,5 @@ class Request < ApplicationRecord
     enum status: [:unfulfilled, :fulfilled]
     enum statement: [:working, :done]
     belongs_to :user
-    has_many :messages
+    has_many :response
 end

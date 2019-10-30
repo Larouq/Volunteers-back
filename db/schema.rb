@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_10_094704) do
+ActiveRecord::Schema.define(version: 2019_10_30_100503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2019_10_10_094704) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "request_id"
-    t.index ["request_id"], name: "index_messages_on_request_id"
+    t.bigint "response_id"
+    t.index ["response_id"], name: "index_messages_on_response_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 2019_10_10_094704) do
     t.integer "status", default: 0
     t.integer "statement", default: 0
     t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
+  create_table "responses", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "request_id"
+    t.index ["request_id"], name: "index_responses_on_request_id"
+    t.index ["user_id"], name: "index_responses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,7 +78,9 @@ ActiveRecord::Schema.define(version: 2019_10_10_094704) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "messages", "requests"
+  add_foreign_key "messages", "responses"
   add_foreign_key "messages", "users"
   add_foreign_key "requests", "users"
+  add_foreign_key "responses", "requests"
+  add_foreign_key "responses", "users"
 end
