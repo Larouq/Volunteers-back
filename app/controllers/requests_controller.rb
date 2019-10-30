@@ -8,7 +8,22 @@ class RequestsController < ApplicationController
         else
             @requests = Request.all
         end
-        render json: @requests
+        render json: @requests.map { |i| {
+            :id => i.id,
+            :title => i.title,
+            :description => i.description,
+            :lat => i.lat,
+            :lng => i.lng,
+            :address => i.address,
+            :user_id => i.user_id,
+            :created_at => i.created_at,
+            :updated_at => i.updated_at,
+            :category => i.category,
+            :user_name => i.user_name,
+            :status => i.status,
+            :statement => i.statement,
+            :count_helper => Request.find(i.id).response.count
+        }}
     end
 
     def create
