@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-    # before_action :authenticate_user!
+    before_action :authenticate_user, only: [:create, :update]
 
     def index
         if  params[:user_id]
